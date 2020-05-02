@@ -1,0 +1,10 @@
+.gridItem{
+  align-self: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.photo{
+  border: black 1px solid;
+  max-width: 80px;
+  height: 80px;
+}

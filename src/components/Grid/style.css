@@ -1,0 +1,13 @@
+#gridBox{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+}
+
+@media (min-width: 1200px) {
+  #gridBox{   
+    margin: 30px 50px 0 50px;
+  }
+}
