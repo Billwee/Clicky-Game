@@ -3,8 +3,26 @@
   margin-top: 30px;
   margin-bottom: 50px;
 }
-.photo{
-  border: black 1px solid;
+
+
+.photo {
   width: 150px;
   height: 150px;
+  padding: 10px;
+  border: 5px #888 double;
+  border-radius: 5px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+.photo:hover, .photo:focus, .photo:active {
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .2);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }

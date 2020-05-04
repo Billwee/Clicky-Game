@@ -7,7 +7,7 @@ function Grid(props) {
       <div id='gridBox'>
 
         {props.children}
-      </div>s
+      </div>
     </div>
 
   )

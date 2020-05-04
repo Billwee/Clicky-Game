@@ -4,6 +4,7 @@ import Jumbotron from "./components/Jumbotron";
 import Score from "./components/Score";
 import Grid from "./components/Grid";
 import Item from "./components/Item";
+import Footer from "./components/Footer";
 import images from "./photos.json"
 
 
@@ -28,21 +29,22 @@ class App extends Component {
       images[length] = images[x]
       images[x] = y;
     }
-
-    console.log(images)
-
     this.setState({ images })
   }
 
   check = (id) => {
-
-    let image = this.state.images
+    let image = this.state.images;
 
     for (let i = 0; i < image.length; i++) {
       if (image[i].id === id && !image[i].clicked) {
         image[i].clicked = true;
-        this.setState({ images, score: this.state.score + 1 })
-        return this.scramble()
+        this.setState({ images, score: this.state.score + 1 }, () => {
+          if (this.state.score === 12) {
+            return this.reset()
+          } else {
+            return this.scramble()
+          }
+        })
       } else if (image[i].id === id && image[i].clicked) {
         return this.reset()
 
@@ -85,6 +87,7 @@ class App extends Component {
             />
           ))}
         </Grid>
+        <Footer />
       </Wrapper >
     )
   };
