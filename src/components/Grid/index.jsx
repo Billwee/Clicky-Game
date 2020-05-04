@@ -7,9 +7,7 @@ function Grid(props) {
       <div id='gridBox'>
 
         {props.children}
-      </div>
-      {/* <button></button> */}
-      {/* <img src={props.image} alt="" /> */}
+      </div>s
     </div>
 
   )

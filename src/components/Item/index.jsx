@@ -5,7 +5,7 @@ function Item(props) {
   return (
     <div className="gridItem">
       <div>
-        <img className="photo" src={props.image} alt="" />
+        <img onClick={() => props.check(props.id)} className="photo" src={props.image} alt="" />
       </div>
     </div>
   )

@@ -14,6 +14,56 @@ class App extends Component {
     score: 0
   };
 
+  scramble = () => {
+    const images = this.state.images;
+
+    let length = images.length, x, y;
+    while (length) {
+
+      x = Math.floor(Math.random() * length--)
+
+      y = images[length]
+      images[length] = images[x]
+      images[x] = y;
+    }
+
+    console.log(images)
+
+    this.setState({ images })
+  }
+
+  check = (id) => {
+
+    let image = this.state.images
+
+    for (let i = 0; i < image.length; i++) {
+      if (image[i].id === id && !image[i].clicked) {
+        image[i].clicked = true;
+        this.setState({ images, score: this.state.score + 1 })
+        return this.scramble()
+      } else if (image[i].id === id && image[i].clicked) {
+        return this.reset()
+
+      }
+    }
+  }
+
+  reset = () => {
+    let images = this.state.images.map(element => {
+      return element.clicked = false
+    });
+
+    if (this.state.score > this.state.highScore) {
+      this.setState({ images, score: 0, highScore: this.state.score })
+      this.scramble()
+    } else {
+      this.setState({ images, score: 0 })
+      this.scramble()
+    }
+
+
+  }
+
 
   render() {
     return (
@@ -25,11 +75,11 @@ class App extends Component {
         />
         <Grid>
           {this.state.images.map(item => (
-            // <Score />
             <Item
-              id={images.id}
+              id={item.id}
               image={item.image}
               clicked={item.clicked}
+              check={this.check}
             />
           ))}
         </Grid>
