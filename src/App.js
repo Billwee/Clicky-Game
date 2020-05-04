@@ -5,6 +5,8 @@ import Score from "./components/Score";
 import Grid from "./components/Grid";
 import Item from "./components/Item";
 import images from "./photos.json"
+
+
 import './App.css';
 
 class App extends Component {
