@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 
+// Image grid items. 
 function Item(props) {
   return (
     <div className="gridItem">

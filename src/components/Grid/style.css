@@ -6,6 +6,7 @@
   margin-top: 30px;
 }
 
+/* Didn't like the wide grid spacing over 1200 width */
 @media (min-width: 1200px) {
   #gridBox{   
     margin: 30px 70px 0 70px;

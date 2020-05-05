@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 
+// Scoreboard writeup
 function Score(props) {
   return (
     <div id="score" className="container d-flex justify-content-between">

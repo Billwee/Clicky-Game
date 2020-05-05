@@ -4,7 +4,7 @@
   margin-bottom: 50px;
 }
 
-
+/* Inital styling for grid items including base shadow and hover transform */
 .photo {
   width: 150px;
   height: 150px;
@@ -27,6 +27,8 @@
   transform: scale(1.1);
 }
 
+
+/* Animation for when "wrong" is added to the className*/
 @-webkit-keyframes wrong {
   16.65% {
     -webkit-transform: translateX(8px);
@@ -80,12 +82,6 @@
   }
 }
 .wrong {
-  /* display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0); */
-
   -webkit-animation-name: wrong;
   animation-name: wrong;
   -webkit-animation-duration: 1s;
@@ -95,6 +91,3 @@
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
 }
-/* .wrong:hover, .wrong:focus, .wrong:active {
-  
-} */

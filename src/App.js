@@ -6,9 +6,9 @@ import Grid from "./components/Grid";
 import Item from "./components/Item";
 import Footer from "./components/Footer";
 import images from "./photos.json"
-
-
 import './App.css';
+
+// Added key parameters to the <i> tags and map methods to avoid warnings
 
 class App extends Component {
   state = {
@@ -19,10 +19,12 @@ class App extends Component {
     wrong: " "
   };
 
+  // Scrambles the image grid on load
   componentDidMount() {
     this.scramble()
   }
 
+  // Function that scrambles the image grid
   scramble = () => {
     const images = this.state.images;
 
@@ -38,6 +40,12 @@ class App extends Component {
     this.setState({ images })
   }
 
+  // Function that checks what the user clicked against it's clicked 
+  // boolean value. If it's false it adds +1 to the score and sets it to 
+  // true. It also checks if your score is 12. If it is, it sends a message that 
+  // you've won and runs the reset function. If true it sends a message telling 
+  // the user they clicked that already and runs the reset function with a wrong 
+  // varible changed to activate the shake animation.
   check = (id) => {
     let image = this.state.images;
 
@@ -56,12 +64,15 @@ class App extends Component {
         this.setState({ message: [<i key="r2" className="fas fa-chevron-circle-right"></i>, ` ${image[i].name} Already Clicked.. Try Again `, <i key="l2" className="fas fa-chevron-circle-left"></i>], wrong: "set" }, () => {
           return this.reset()
         })
-
-
       }
     }
   }
 
+  // Resets the booleans to false in the json file and the score to zero 
+  // in the state. If the wrong varibale === "set" it changes it to "wrong" 
+  // which adds it to the class of the items in the grid which activates 
+  // the shake animation. It also checks the current score against the highscore
+  // and updates it if it's higher.
   reset = () => {
     let images = this.state.images.map(element => {
       return element.clicked = false
@@ -84,9 +95,6 @@ class App extends Component {
         this.scramble()
       }
     }
-
-
-
   }
 
 
