@@ -15,8 +15,13 @@ class App extends Component {
     images,
     highScore: 0,
     score: 0,
-    message: [<i className="fas fa-chevron-circle-right"></i>, " Click Any Character to Start ", <i className="fas fa-chevron-circle-left"></i>]
+    message: [<i key="r" className="fas fa-chevron-circle-right"></i>, " Click Any Character to Start ", <i key="l" className="fas fa-chevron-circle-left"></i>],
+    wrong: " "
   };
+
+  componentDidMount() {
+    this.scramble()
+  }
 
   scramble = () => {
     const images = this.state.images;
@@ -39,16 +44,19 @@ class App extends Component {
     for (let i = 0; i < image.length; i++) {
       if (image[i].id === id && !image[i].clicked) {
         image[i].clicked = true;
-        this.setState({ images, score: this.state.score + 1, message: "" }, () => {
+        this.setState({ images, score: this.state.score + 1, message: "", wrong: " " }, () => {
           if (this.state.score === 12) {
+            this.setState({ message: [<i className="fas fa-chevron-circle-right"></i>, " That's all 12.. Great Job! ", <i className="fas fa-chevron-circle-left"></i>] })
             return this.reset()
           } else {
-            // return this.scramble()
+            return this.scramble()
           }
         })
       } else if (image[i].id === id && image[i].clicked) {
-        this.setState({ message: [<i className="fas fa-chevron-circle-right"></i>, ` ${image[i].name} Already Clicked.. Try Again `, <i className="fas fa-chevron-circle-left"></i>] })
-        return this.reset()
+        this.setState({ message: [<i key="r2" className="fas fa-chevron-circle-right"></i>, ` ${image[i].name} Already Clicked.. Try Again `, <i key="l2" className="fas fa-chevron-circle-left"></i>], wrong: "set" }, () => {
+          return this.reset()
+        })
+
 
       }
     }
@@ -59,13 +67,24 @@ class App extends Component {
       return element.clicked = false
     });
 
-    if (this.state.score > this.state.highScore) {
-      this.setState({ images, score: 0, highScore: this.state.score, message: [<i className="fas fa-chevron-circle-right"></i>, " That's all 12.. Great Job! ", <i className="fas fa-chevron-circle-left"></i>] })
-      this.scramble()
+    if (this.state.wrong === "set") {
+      if (this.state.score > this.state.highScore) {
+        this.setState({ images, score: 0, highScore: this.state.score, wrong: "wrong" })
+        this.scramble()
+      } else {
+        this.setState({ images, score: 0, wrong: "wrong" })
+        this.scramble()
+      }
     } else {
-      this.setState({ images, score: 0 })
-      this.scramble()
+      if (this.state.score > this.state.highScore) {
+        this.setState({ images, score: 0, highScore: this.state.score, wrong: " " })
+        this.scramble()
+      } else {
+        this.setState({ images, score: 0, wrong: " " })
+        this.scramble()
+      }
     }
+
 
 
   }
@@ -83,6 +102,8 @@ class App extends Component {
         <Grid>
           {this.state.images.map(item => (
             <Item
+              key={item.id}
+              wrong={this.state.wrong}
               id={item.id}
               image={item.image}
               clicked={item.clicked}
