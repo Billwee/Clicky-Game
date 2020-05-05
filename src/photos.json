@@ -2,73 +2,73 @@
   {
     "id": 1,
     "name": "Mario",
-    "image": "/img/mario.png",
+    "image": "./img/mario.png",
     "clicked": false
   },
   {
     "id": 2,
     "name": "Donkey Kong",
-    "image": "/img/dk.png",
+    "image": "./img/dk.png",
     "clicked": false
   },
   {
     "id": 3,
     "name": "Kirby",
-    "image": "/img/kirby.png",
+    "image": "./img/kirby.png",
     "clicked": false
   },
   {
     "id": 4,
     "name": "Captian Falcon",
-    "image": "/img/falcon.png",
+    "image": "./img/falcon.png",
     "clicked": false
   },
   {
     "id": 5,
     "name": "Ness",
-    "image": "/img/ness.png",
+    "image": "./img/ness.png",
     "clicked": false
   },
   {
     "id": 6,
     "name": "Star Fox",
-    "image": "/img/fox.png",
+    "image": "./img/fox.png",
     "clicked": false
   },
   {
     "id": 7,
     "name": "Link",
-    "image": "/img/link.png",
+    "image": "./img/link.png",
     "clicked": false
   },
   {
     "id": 8,
     "name": "Jigglypuff",
-    "image": "/img/jigglypuff.png",
+    "image": "./img/jigglypuff.png",
     "clicked": false
   },
   {
     "id": 9,
     "name": "Pikachu",
-    "image": "/img/pikachu.png",
+    "image": "./img/pikachu.png",
     "clicked": false
   },
   {
     "id": 10,
     "name": "Samus",
-    "image": "/img/samus.png",
+    "image": "./img/samus.png",
     "clicked": false
   },
   {
     "id": 11,
     "name": "Yoshi",
-    "image": "/img/yoshi.png",
+    "image": "./img/yoshi.png",
     "clicked": false
   },
   {
     "id": 12,
     "name": "Luigi",
-    "image": "/img/luigi.png",
+    "image": "./img/luigi.png",
     "clicked": false
   }
 ]
