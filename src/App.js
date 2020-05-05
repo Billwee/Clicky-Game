@@ -14,7 +14,8 @@ class App extends Component {
   state = {
     images,
     highScore: 0,
-    score: 0
+    score: 0,
+    message: [<i className="fas fa-chevron-circle-right"></i>, " Click Any Character to Start ", <i className="fas fa-chevron-circle-left"></i>]
   };
 
   scramble = () => {
@@ -38,14 +39,15 @@ class App extends Component {
     for (let i = 0; i < image.length; i++) {
       if (image[i].id === id && !image[i].clicked) {
         image[i].clicked = true;
-        this.setState({ images, score: this.state.score + 1 }, () => {
+        this.setState({ images, score: this.state.score + 1, message: "" }, () => {
           if (this.state.score === 12) {
             return this.reset()
           } else {
-            return this.scramble()
+            // return this.scramble()
           }
         })
       } else if (image[i].id === id && image[i].clicked) {
+        this.setState({ message: [<i className="fas fa-chevron-circle-right"></i>, ` ${image[i].name} Already Clicked.. Try Again `, <i className="fas fa-chevron-circle-left"></i>] })
         return this.reset()
 
       }
@@ -58,7 +60,7 @@ class App extends Component {
     });
 
     if (this.state.score > this.state.highScore) {
-      this.setState({ images, score: 0, highScore: this.state.score })
+      this.setState({ images, score: 0, highScore: this.state.score, message: [<i className="fas fa-chevron-circle-right"></i>, " That's all 12.. Great Job! ", <i className="fas fa-chevron-circle-left"></i>] })
       this.scramble()
     } else {
       this.setState({ images, score: 0 })
@@ -76,6 +78,7 @@ class App extends Component {
         <Score
           current={this.state.score}
           high={this.state.highScore}
+          message={this.state.message}
         />
         <Grid>
           {this.state.images.map(item => (

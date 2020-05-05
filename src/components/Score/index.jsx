@@ -8,6 +8,9 @@ function Score(props) {
         <h2 id="current">Current Score: {props.current} </h2>
       </div>
       <div>
+        <h4 id="message">{props.message}</h4>
+      </div>
+      <div>
         <h2 id="high">High Score: {props.high} </h2>
       </div>
 
