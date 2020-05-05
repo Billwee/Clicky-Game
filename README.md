@@ -1,7 +1,7 @@
 # Clicky-Game
 
 ## Overview
-This application is memory game built with React where the object is to click each image only once. Click all twelve images and you win. Click the same images twice and it's game over. This memory game themed around Nintendo's Super Smash Bros. so "Choose your character!" wisely.
+This application is a memory game built with React where the object is to click each image only once. Click all twelve images and you win. Click the same images twice and it's game over. This memory game themed around Nintendo's Super Smash Bros. so "Choose your character!" wisely.
 
 ## Deployment
 
@@ -21,5 +21,5 @@ The game can be played by [Clicking Here](https://billwee.github.io/Clicky-Game/
 
 - If an incorrect choice is made a shaking animation is run on the image grid and a game over message is displayed asking the user to try again.
 
-- The highest score for the user's session is also displayed in the scoreboard.
+- The highest score for the user's session is also displayed on the scoreboard.
 
