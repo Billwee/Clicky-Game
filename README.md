@@ -7,6 +7,14 @@ This application is a memory game built with React where the object is to click 
 
 The game can be played by [Clicking Here](https://billwee.github.io/Clicky-Game/).
 
+##Tech Used
+
+- React.js
+- Node.js
+- HTML
+- CSS
+- Bootstrap
+
 ## User Experience
 
 - After the page loads a header, scoreboard, and image grid are displayed.
