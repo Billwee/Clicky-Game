@@ -7,7 +7,7 @@ This application is a memory game built with React where the object is to click 
 
 The game can be played by [Clicking Here](https://billwee.github.io/Clicky-Game/).
 
-##Tech Used
+## Tech Used
 
 - React.js
 - Node.js
