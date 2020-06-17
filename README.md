@@ -26,7 +26,14 @@ The game can be played by [Clicking Here](https://billwee.github.io/Clicky-Game/
 
 ## Application Walkthrough
 
+### Game loaded
 ![GameBoard](./public/img/walk1.PNG)
+
+### Incorrect choice notification
+![GameBoard](./public/img/walk2.PNG)
+
+### Game completed
+![GameBoard](./public/img/walk3.PNG)
 
 
 ## Tech Used
