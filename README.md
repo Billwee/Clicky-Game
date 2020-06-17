@@ -7,13 +7,6 @@ This application is a memory game built with React where the object is to click 
 
 The game can be played by [Clicking Here](https://billwee.github.io/Clicky-Game/).
 
-## Tech Used
-
-- React.js
-- Node.js
-- HTML
-- CSS
-- Bootstrap
 
 ## User Experience
 
@@ -24,10 +17,23 @@ The game can be played by [Clicking Here](https://billwee.github.io/Clicky-Game/
 - Clicking one of the images starts the game and adds +1 to your score.
 
   - This counter helps the user keep track of images left to click
+  
+- If an incorrect choice is made a shaking animation is run on the image grid and a game over message is displayed asking the user to try again.
 
 - If all images are clicked successfully. A message telling the user so pops up and the game starts over.
 
-- If an incorrect choice is made a shaking animation is run on the image grid and a game over message is displayed asking the user to try again.
-
 - The highest score for the user's session is also displayed on the scoreboard.
+
+## Application Walkthrough
+
+![GameBoard](./public/img/walk1.PNG)
+
+
+## Tech Used
+
+- React.js
+- Node.js
+- HTML
+- CSS
+- Bootstrap
 
